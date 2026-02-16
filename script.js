@@ -52,7 +52,11 @@ function displayRepos(repos) {
 
     repos.forEach(repo => {
         const card = document.createElement('a');
-        card.href = repo.html_url;
+        if (repo.name.toLowerCase() === 'bank-of-ishaan') {
+            card.href = 'https://ishaan-ku.github.io/bank-of-ishaan/';
+        } else {
+            card.href = repo.html_url;
+        }
         card.target = "_blank";
         card.className = 'repo-card';
         card.setAttribute('aria-label', `View ${repo.name} on GitHub`);
